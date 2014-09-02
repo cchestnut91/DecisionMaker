@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 
+@property (strong, nonatomic) NSMutableArray *options;
+@property (strong, nonatomic) NSMutableDictionary *savedLists;
+@property (weak, nonatomic) IBOutlet UITableView *choicesTable;
+@property (weak, nonatomic) IBOutlet UIButton *chooseButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UITextField *addField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel;
+
+- (IBAction)clickChoose:(id)sender;
+- (IBAction)clickSave:(id)sender;
+- (IBAction)clickClear:(id)sender;
+- (IBAction)finishAdding:(id)sender;
+-(void)saveLists;
 
 @end
 

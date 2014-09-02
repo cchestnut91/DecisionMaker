@@ -13,6 +13,11 @@
 		AB0483B81976C30200EC506E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB0483B61976C30200EC506E /* Main.storyboard */; };
 		AB0483BA1976C30200EC506E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0483B91976C30200EC506E /* Images.xcassets */; };
 		AB0483C61976C30200EC506E /* DecisionMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0483C51976C30200EC506E /* DecisionMakerTests.m */; };
+		AB0483D41976D00700EC506E /* SavedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0483D31976D00700EC506E /* SavedTableViewController.m */; };
+		ABE1283D1979AF5D00DB5D36 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */; };
+		ABE128431979AF5D00DB5D36 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE128421979AF5D00DB5D36 /* TodayViewController.m */; };
+		ABE128451979AF5D00DB5D36 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE128441979AF5D00DB5D36 /* MainInterface.storyboard */; };
+		ABE128481979AF5D00DB5D36 /* TinyDecision.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ABE1283A1979AF5D00DB5D36 /* TinyDecision.appex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +28,35 @@
 			remoteGlobalIDString = AB0483A81976C30200EC506E;
 			remoteInfo = DecisionMaker;
 		};
+		ABE128461979AF5D00DB5D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB0483A11976C30200EC506E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE128391979AF5D00DB5D36;
+			remoteInfo = TinyDecision;
+		};
+		ABE128491979AF5D00DB5D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB0483A11976C30200EC506E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE128391979AF5D00DB5D36;
+			remoteInfo = TinyDecision;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ABE1284E1979AF5D00DB5D36 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ABE128481979AF5D00DB5D36 /* TinyDecision.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AB0483A91976C30200EC506E /* DecisionMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecisionMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +71,16 @@
 		AB0483BF1976C30200EC506E /* DecisionMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecisionMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0483C41976C30200EC506E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB0483C51976C30200EC506E /* DecisionMakerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DecisionMakerTests.m; sourceTree = "<group>"; };
+		AB0483CF1976C5DC00EC506E /* DecisionMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DecisionMaker.entitlements; sourceTree = "<group>"; };
+		AB0483D21976D00700EC506E /* SavedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedTableViewController.h; sourceTree = "<group>"; };
+		AB0483D31976D00700EC506E /* SavedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedTableViewController.m; sourceTree = "<group>"; };
+		ABE1283A1979AF5D00DB5D36 /* TinyDecision.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TinyDecision.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		ABE128401979AF5D00DB5D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE128411979AF5D00DB5D36 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		ABE128421979AF5D00DB5D36 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		ABE128441979AF5D00DB5D36 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		ABE1284F1979C8FA00DB5D36 /* TinyDecision.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TinyDecision.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +98,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABE128371979AF5D00DB5D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE1283D1979AF5D00DB5D36 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +114,8 @@
 			children = (
 				AB0483AB1976C30200EC506E /* DecisionMaker */,
 				AB0483C21976C30200EC506E /* DecisionMakerTests */,
+				ABE1283E1979AF5D00DB5D36 /* TinyDecision */,
+				ABE1283B1979AF5D00DB5D36 /* Frameworks */,
 				AB0483AA1976C30200EC506E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +125,7 @@
 			children = (
 				AB0483A91976C30200EC506E /* DecisionMaker.app */,
 				AB0483BF1976C30200EC506E /* DecisionMakerTests.xctest */,
+				ABE1283A1979AF5D00DB5D36 /* TinyDecision.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,10 +133,13 @@
 		AB0483AB1976C30200EC506E /* DecisionMaker */ = {
 			isa = PBXGroup;
 			children = (
+				AB0483CF1976C5DC00EC506E /* DecisionMaker.entitlements */,
 				AB0483B01976C30200EC506E /* AppDelegate.h */,
 				AB0483B11976C30200EC506E /* AppDelegate.m */,
 				AB0483B31976C30200EC506E /* ViewController.h */,
 				AB0483B41976C30200EC506E /* ViewController.m */,
+				AB0483D21976D00700EC506E /* SavedTableViewController.h */,
+				AB0483D31976D00700EC506E /* SavedTableViewController.m */,
 				AB0483B61976C30200EC506E /* Main.storyboard */,
 				AB0483B91976C30200EC506E /* Images.xcassets */,
 				AB0483AC1976C30200EC506E /* Supporting Files */,
@@ -116,6 +173,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		ABE1283B1979AF5D00DB5D36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABE1283E1979AF5D00DB5D36 /* TinyDecision */ = {
+			isa = PBXGroup;
+			children = (
+				ABE1284F1979C8FA00DB5D36 /* TinyDecision.entitlements */,
+				ABE128411979AF5D00DB5D36 /* TodayViewController.h */,
+				ABE128421979AF5D00DB5D36 /* TodayViewController.m */,
+				ABE128441979AF5D00DB5D36 /* MainInterface.storyboard */,
+				ABE1283F1979AF5D00DB5D36 /* Supporting Files */,
+			);
+			path = TinyDecision;
+			sourceTree = "<group>";
+		};
+		ABE1283F1979AF5D00DB5D36 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABE128401979AF5D00DB5D36 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,10 +211,13 @@
 				AB0483A51976C30200EC506E /* Sources */,
 				AB0483A61976C30200EC506E /* Frameworks */,
 				AB0483A71976C30200EC506E /* Resources */,
+				ABE1284E1979AF5D00DB5D36 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				ABE128471979AF5D00DB5D36 /* PBXTargetDependency */,
+				ABE1284A1979AF5D00DB5D36 /* PBXTargetDependency */,
 			);
 			name = DecisionMaker;
 			productName = DecisionMaker;
@@ -154,6 +242,23 @@
 			productReference = AB0483BF1976C30200EC506E /* DecisionMakerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		ABE128391979AF5D00DB5D36 /* TinyDecision */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE1284D1979AF5D00DB5D36 /* Build configuration list for PBXNativeTarget "TinyDecision" */;
+			buildPhases = (
+				ABE128361979AF5D00DB5D36 /* Sources */,
+				ABE128371979AF5D00DB5D36 /* Frameworks */,
+				ABE128381979AF5D00DB5D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyDecision;
+			productName = TinyDecision;
+			productReference = ABE1283A1979AF5D00DB5D36 /* TinyDecision.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,10 +270,31 @@
 				TargetAttributes = {
 					AB0483A81976C30200EC506E = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = VDWJ8UMBJ6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					AB0483BE1976C30200EC506E = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = AB0483A81976C30200EC506E;
+					};
+					ABE128391979AF5D00DB5D36 = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = VDWJ8UMBJ6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -187,6 +313,7 @@
 			targets = (
 				AB0483A81976C30200EC506E /* DecisionMaker */,
 				AB0483BE1976C30200EC506E /* DecisionMakerTests */,
+				ABE128391979AF5D00DB5D36 /* TinyDecision */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +335,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABE128381979AF5D00DB5D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE128451979AF5D00DB5D36 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -218,6 +353,7 @@
 				AB0483B51976C30200EC506E /* ViewController.m in Sources */,
 				AB0483B21976C30200EC506E /* AppDelegate.m in Sources */,
 				AB0483AF1976C30200EC506E /* main.m in Sources */,
+				AB0483D41976D00700EC506E /* SavedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +365,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ABE128361979AF5D00DB5D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE128431979AF5D00DB5D36 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -236,6 +380,16 @@
 			isa = PBXTargetDependency;
 			target = AB0483A81976C30200EC506E /* DecisionMaker */;
 			targetProxy = AB0483C01976C30200EC506E /* PBXContainerItemProxy */;
+		};
+		ABE128471979AF5D00DB5D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE128391979AF5D00DB5D36 /* TinyDecision */;
+			targetProxy = ABE128461979AF5D00DB5D36 /* PBXContainerItemProxy */;
+		};
+		ABE1284A1979AF5D00DB5D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE128391979AF5D00DB5D36 /* TinyDecision */;
+			targetProxy = ABE128491979AF5D00DB5D36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -285,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -321,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,9 +488,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DecisionMaker/DecisionMaker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DecisionMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -345,9 +505,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = DecisionMaker/DecisionMaker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = DecisionMaker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -385,6 +551,40 @@
 			};
 			name = Release;
 		};
+		ABE1284B1979AF5D00DB5D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TinyDecision/TinyDecision.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = TinyDecision/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		ABE1284C1979AF5D00DB5D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TinyDecision/TinyDecision.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = TinyDecision/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -404,6 +604,7 @@
 				AB0483CB1976C30200EC506E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AB0483CC1976C30200EC506E /* Build configuration list for PBXNativeTarget "DecisionMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +613,16 @@
 				AB0483CE1976C30200EC506E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE1284D1979AF5D00DB5D36 /* Build configuration list for PBXNativeTarget "TinyDecision" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE1284B1979AF5D00DB5D36 /* Debug */,
+				ABE1284C1979AF5D00DB5D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
