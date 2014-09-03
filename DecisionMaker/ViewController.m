@@ -27,6 +27,10 @@
     
     self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     
+    self.adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50)];
+    [self.view addSubview:self.adView];
+    [self.adView setDelegate:self];
+    
     NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.chestnut.DecisionMaker.sharedLists"];
     
     if ([mySharedDefaults objectForKey:@"savedLists"]){
@@ -35,7 +39,6 @@
             NSLog(@"%d",self.savedLists.count);
             NSMutableArray *new = [NSMutableArray arrayWithArray:[self.savedLists objectForKey:key]];
             [self.savedLists setObject:new forKey:key];
-            NSLog(@"%d",self.savedLists.count);
         }
     }
 }
@@ -50,16 +53,14 @@
     [self.choicesTable reloadData];
     isBannerVisible = NO;
     
+    self.adView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50);
     self.bottomSpace.constant = 0;
     [self.view layoutIfNeeded];
-    self.adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50)];
     
 }
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.view addSubview:self.adView];
-    [self.adView setDelegate:self];
 }
 
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
@@ -90,8 +91,8 @@
     {
         self.bottomSpace.constant = 0;
         [UIView animateWithDuration:0.25 animations:^{
-            [self.view layoutIfNeeded];
             self.adView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50);
+            [self.view layoutIfNeeded];
         }completion:^(BOOL finished){
             isBannerVisible = NO;
         }];
@@ -137,7 +138,6 @@
         [noOptions show];
     } else {
         NSUInteger randomIndex = arc4random() % [self.options count];
-        NSLog(@"%lu",(unsigned long)randomIndex);
         [self.topLabel setText:[self.options objectAtIndex:randomIndex]];
     }
 }
