@@ -12,7 +12,9 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    BOOL isBannerVisible;
+}
             
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +24,8 @@
     self.savedLists = [[NSMutableDictionary alloc] init];
     [self.choicesTable setDataSource:self];
     [self.choicesTable setDelegate:self];
+    
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     
     NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.chestnut.DecisionMaker.sharedLists"];
     
@@ -36,10 +40,6 @@
     }
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -48,6 +48,54 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.choicesTable reloadData];
+    isBannerVisible = NO;
+    
+    self.bottomSpace.constant = 0;
+    [self.view layoutIfNeeded];
+    self.adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50)];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.view addSubview:self.adView];
+    [self.adView setDelegate:self];
+}
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    if (!isBannerVisible)
+    {
+        self.bottomSpace.constant = 50;
+        
+        if (self.adView.superview == nil)
+        {
+            [self.view addSubview:self.adView];
+        }
+        
+        [UIView animateWithDuration:0.25 animations:^{
+            [self.view layoutIfNeeded];
+            self.adView.frame = CGRectMake(0, self.view.frame.size.height - 50, self.view.frame.size.width, 50);
+        }completion:^(BOOL finished){
+            isBannerVisible = YES;
+        }];
+    }
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    NSLog(@"Failed to retrieve ad");
+    
+    if (isBannerVisible)
+    {
+        self.bottomSpace.constant = 0;
+        [UIView animateWithDuration:0.25 animations:^{
+            [self.view layoutIfNeeded];
+            self.adView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 50);
+        }completion:^(BOOL finished){
+            isBannerVisible = NO;
+        }];
+    }
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

@@ -27,10 +27,6 @@
     
     showAll = NO;
     
-    NSLog(@"ViewIsLoading");
-    [self.choiceLabel setText:@"viewDidLoad"];
-    
-    
     NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.chestnut.DecisionMaker.sharedLists"];
     
     if ([mySharedDefaults objectForKey:@"savedLists"]){
@@ -38,12 +34,12 @@
     }
     [mySharedDefaults setObject:self.savedLists forKey:@"savedLists"];
     [self.choiceTable reloadData];
+    
+    [self.choiceLabel setText:@"Select list to make a choice"];
 }
 
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-    
-    [self.choiceLabel setText:@"Select list to make a choice"];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -54,19 +50,9 @@
 
 -(void)awakeFromNib{
     [super awakeFromNib];
-    
-    NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.chestnut.DecisionMaker.sharedLists"];
-    
-    if ([mySharedDefaults objectForKey:@"savedLists"]){
-        self.savedLists = [mySharedDefaults objectForKey:@"savedLists"];
-    }
-    [mySharedDefaults setObject:self.savedLists forKey:@"savedLists"];
-    [self.choiceTable reloadData];
-    //[self setPreferredContentSize:CGSizeMake(self.choiceTable.frame.size.width, (self.choiceTable.rowHeight * [self.choiceTable numberOfRowsInSection:0]) + self.choiceLabel.frame.size.height)];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    [self.choiceLabel setText:@"Updating Table"];
     return 1;
 }
 
@@ -118,13 +104,35 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
     
-    // If an error is encoutered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
-
-    completionHandler(NCUpdateResultNewData);
+    NSUserDefaults *mySharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.chestnut.DecisionMaker.sharedLists"];
+    
+    bool update = NO;
+    if ([mySharedDefaults objectForKey:@"savedLists"]){
+        NSDictionary *newLists = [mySharedDefaults objectForKey:@"savedLists"];
+        if (newLists.count == self.savedLists.count){
+            for (NSString *key in newLists){
+                if (![self.savedLists objectForKey:key]){
+                    update = YES;
+                    break;
+                } else if (![[self.savedLists objectForKey:key] isEqualToArray:[newLists objectForKey:key]]){
+                    update = YES;
+                    break;
+                }
+            }
+        } else {
+            update = YES;
+        }
+        if (update){
+            self.savedLists = [NSMutableDictionary dictionaryWithDictionary:newLists];
+            [mySharedDefaults setObject:self.savedLists forKey:@"savedLists"];
+            completionHandler(NCUpdateResultNewData);
+        } else {
+            completionHandler(NCUpdateResultNoData);
+        }
+    } else {
+        completionHandler(NCUpdateResultFailed);
+    }
 }
 
 @end

@@ -14,6 +14,7 @@
 		AB0483BA1976C30200EC506E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB0483B91976C30200EC506E /* Images.xcassets */; };
 		AB0483C61976C30200EC506E /* DecisionMakerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0483C51976C30200EC506E /* DecisionMakerTests.m */; };
 		AB0483D41976D00700EC506E /* SavedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0483D31976D00700EC506E /* SavedTableViewController.m */; };
+		AB646EFA19B694FC0063B7F2 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB646EF919B694FC0063B7F2 /* iAd.framework */; };
 		ABE1283D1979AF5D00DB5D36 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */; };
 		ABE128431979AF5D00DB5D36 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE128421979AF5D00DB5D36 /* TodayViewController.m */; };
 		ABE128451979AF5D00DB5D36 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE128441979AF5D00DB5D36 /* MainInterface.storyboard */; };
@@ -74,6 +75,7 @@
 		AB0483CF1976C5DC00EC506E /* DecisionMaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DecisionMaker.entitlements; sourceTree = "<group>"; };
 		AB0483D21976D00700EC506E /* SavedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedTableViewController.h; sourceTree = "<group>"; };
 		AB0483D31976D00700EC506E /* SavedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedTableViewController.m; sourceTree = "<group>"; };
+		AB646EF919B694FC0063B7F2 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		ABE1283A1979AF5D00DB5D36 /* TinyDecision.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TinyDecision.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		ABE128401979AF5D00DB5D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB646EFA19B694FC0063B7F2 /* iAd.framework in Frameworks */,
 				ABE1283D1979AF5D00DB5D36 /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +179,7 @@
 		ABE1283B1979AF5D00DB5D36 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB646EF919B694FC0063B7F2 /* iAd.framework */,
 				ABE1283C1979AF5D00DB5D36 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -567,6 +571,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -582,6 +587,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

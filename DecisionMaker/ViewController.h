@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <iAd/iAd.h>
 
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, ADBannerViewDelegate>
 
 @property (strong, nonatomic) NSMutableArray *options;
 @property (strong, nonatomic) NSMutableDictionary *savedLists;
@@ -18,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *addField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *clearButton;
 @property (weak, nonatomic) IBOutlet UILabel *topLabel;
+@property (strong, nonatomic) IBOutlet ADBannerView *adView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomSpace;
 
 - (IBAction)clickChoose:(id)sender;
 - (IBAction)clickSave:(id)sender;
